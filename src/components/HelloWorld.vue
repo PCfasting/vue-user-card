@@ -1,23 +1,24 @@
 <template>
   <div class="user-card">
-        <img src="../assets/70.jpg" class="user-photo">
-        <p class="user-nickname">romashka</p>
+        <img class="user-photo" v-bind:src="value.link_ing">
+        <p class="user-nickname">{{value.nickname}}</p>
         <p class="user-name">
-            Иванов Иван<br>
-            Иванович
+            {{value.nickname}}
+            <br>
+            {{value.name}}
         </p>
         <hr>
         <p class="user-info-item">
             <img src="../assets/location.png">
-            Москва, Юбилейная 50
+            {{value.address}}
         </p>
         <p class="user-info-item">
             <img src="../assets/mail.png">
-            coldrabbit48@example.com
+            {{value.email}}
         </p>
         <p class="user-info-item">
             <img src="../assets/phone.png">
-            +7-495-266-57-34
+            {{value.number}}
         </p>
     </div>
 </template>
@@ -25,9 +26,7 @@
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  props: ['value'],
 }
 </script>
 
